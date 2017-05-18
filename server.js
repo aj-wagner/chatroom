@@ -6,7 +6,7 @@ var port = 8000;
 
 app.use(bp.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname + '/client')));
-app.set('views', path.join(__dirname + '/client/templates'));
+app.set('views', path.join(__dirname + '/client/view'));
 app.set('view engine', 'ejs');
 
 require('./server/config/routes.js')(app);
