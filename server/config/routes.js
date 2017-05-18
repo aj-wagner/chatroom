@@ -5,5 +5,7 @@ module.exports = function(app){
 		res.render('index')
 	})
 
-
+	app.post('/login/submit', function(req, res){
+		api.chatroom(req, res);
+	})
 }
