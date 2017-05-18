@@ -2,8 +2,47 @@
 <html>
 <head>
 	<title>Chatroom Home</title>
+	<link rel="stylesheet" type="text/css" href="../css/chat.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+
+	<script>
+		$(function () {
+	    	var socket = io();
+	    	$('form').submit(function(){
+	    		
+	    		var temp = $('#chatText').val();
+	    		console.log(temp);
+
+	      		socket.emit('chat message', $('#chatText').val());
+	      		$('#chatText').val('');
+	      		return false;
+	    	});
+
+	    	socket.on('chatmsg', function(msg){
+	    		console.log(msg);
+      			$('#chatLog').append(msg);
+    		});
+  		});
+  		
+	</script>
 </head>
 <body>
-
+<div id="wrapper">
+	<div id="rightHand">
+		<div id="userProfile">
+		</div>
+		<div id="userHistory">
+			
+		</div>
+	</div>
+	<div id="chatthreads">
+		<form>
+			<input type="text" id="chatText">
+			<input type="submit" name="post">
+		</form>
+		<p id="chatLog">starting text</p>
+	</div>
+</div>
 </body>
 </html>
