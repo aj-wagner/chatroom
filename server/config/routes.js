@@ -1,5 +1,7 @@
 var api = require('./../controller/user.js');
 var stat = require('./../controller/api.js');
+
+
 module.exports = function(app){
 	app.get('/login', function(req, res){
 		res.render('index')
@@ -13,5 +15,8 @@ module.exports = function(app){
 		stat.stats(req, res)
 	});
 
+	app.get('/', function(req, res){
+		res.render('chatroom')
+	})
 
 }

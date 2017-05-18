@@ -1,0 +1,30 @@
+
+*{
+	outline: 1px dotted red;
+	margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+#wrapper
+{
+	background-color: #4c4949;
+	width: 970px;
+	margin: 0 auto;
+	height: 600px;
+
+}
+
+#rightHand{
+
+}
+#userProfile{
+
+}
+#userHistory{
+
+}
+
+#chatthreads{
+
+}
