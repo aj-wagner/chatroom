@@ -23,6 +23,12 @@
 	    		console.log(msg);
       			$('#chatLog').append(msg);
     		});
+
+			$.get("http://localhost:8000/stat/<%=username%>", function(data) {
+				$("#userProfile").html("<strong>User: </strong><i>"+data.name+"</i>")
+				$("#userHistory").html("<strong>Count: </strong><i>"+data.count+"</i>")				
+			})
+
   		});
   		
 	</script>

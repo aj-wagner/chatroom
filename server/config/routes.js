@@ -8,7 +8,7 @@ module.exports = function(app){
 	})
 
 	app.post('/login/submit', function(req, res){
-		api.chatroom(req, res);
+		api.statupdate(req, res);
 	})
 
 	app.get("/stat/:name", function(req, res) {

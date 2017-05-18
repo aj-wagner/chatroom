@@ -3,7 +3,7 @@ var fs = require('fs');
 module.exports = (function(req, res){
 
     return {
-        chatroom: function (req, res) {
+        statupdate: function (req, res) {
             var oUsers, found;
             if(req.body) {
                 if(fs.existsSync("userObjects.json")) {
@@ -52,7 +52,7 @@ module.exports = (function(req, res){
                 }
                
             }
-          
+          res.render('chatroom', req.body)
         }
     }
 
